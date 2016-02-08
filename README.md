@@ -10,20 +10,13 @@ Usage
 You should add to your pom.xml:
 
         <dependency>
-            <groupId>com.github.idamobile</groupId>
+            <groupId>com.sprylab.dagger</groupId>
             <artifactId>dagger-proguard-helper-processor</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>1.0.1-sprylab1</version>
             <scope>provided</scope>
         </dependency>
 
-Also add to your `<repositories>`:
-
-        <repository>
-            <id>shaubert-snapshots</id>
-            <url>https://github.com/shaubert/maven-repo/raw/master/snapshots</url>
-        </repository>
-
-The Dagger Proguard Helper annotation processor will generate `dagger-proguard-keepnames.cfg` at root of your project. You have to add this config file to proguard configuration. If you are using [android-maven-plugin](https://code.google.com/p/maven-android-plugin/) the configuration should be like following:
+The Dagger Proguard Helper annotation processor will generate `dagger-proguard-keepnames.cfg` at the module path of your project. You have to add this config file to proguard configuration. If you are using [android-maven-plugin](https://code.google.com/p/maven-android-plugin/) the configuration should be like following:
 
         <plugin>
             <groupId>com.jayway.maven.plugins.android.generation2</groupId>

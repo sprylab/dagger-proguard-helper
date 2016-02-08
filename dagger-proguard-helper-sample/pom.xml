@@ -3,17 +3,16 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>com.sprylab.dagger</groupId>
+        <artifactId>dagger-proguard-helper</artifactId>
+        <version>1.0.1-sprylab1</version>
+    </parent>
+
     <name>Dagger Proguard Helper Sample</name>
 
     <artifactId>dagger-proguard-helper-sample</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <parent>
-        <groupId>com.github.idamobile</groupId>
-        <artifactId>dagger-proguard-helper</artifactId>
-        <version>1.0.1-SNAPSHOT</version>
-    </parent>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,23 +20,21 @@
 
     <dependencies>
          <dependency>
-            <groupId>com.github.idamobile</groupId>
+            <groupId>com.sprylab.dagger</groupId>
             <artifactId>dagger-proguard-helper-processor</artifactId>
-            <version>1.0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.squareup.dagger</groupId>
             <artifactId>dagger-compiler</artifactId>
-            <version>1.0.1</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>com.squareup.dagger</groupId>
             <artifactId>dagger</artifactId>
-            <version>1.0.1</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

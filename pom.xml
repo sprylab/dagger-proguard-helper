@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <name>Dagger Proguard Helper</name>
 
-    <groupId>com.github.idamobile</groupId>
+    <parent>
+        <groupId>com.sprylab</groupId>
+        <artifactId>sprylab-parent</artifactId>
+        <version>4</version>
+    </parent>
+
+    <groupId>com.sprylab.dagger</groupId>
     <artifactId>dagger-proguard-helper</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1-sprylab1</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -23,20 +30,23 @@
     </scm>
 
     <properties>
-        <repo.id>git.shaubert.repo</repo.id>
-        <repo.url>file://W:/home/maven-repo</repo.url>
+        <dagger.version>1.2.2</dagger.version>
     </properties>
 
-    <distributionManagement>
-        <repository>
-            <id>${repo.id}</id>
-            <url>${repo.url}/releases</url>
-        </repository>
-        <snapshotRepository>
-            <id>${repo.id}-snapshots</id>
-            <url>${repo.url}/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.squareup.dagger</groupId>
+                <artifactId>dagger</artifactId>
+                <version>${dagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.squareup.dagger</groupId>
+                <artifactId>dagger-compiler</artifactId>
+                <version>${dagger.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <pluginManagement>
