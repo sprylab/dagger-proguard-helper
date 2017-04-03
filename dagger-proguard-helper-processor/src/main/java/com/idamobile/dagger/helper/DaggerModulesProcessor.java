@@ -1,7 +1,15 @@
 package com.idamobile.dagger.helper;
 
-import dagger.Module;
-import dagger.Provides;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 import javax.annotation.processing.AbstractProcessor;
 import javax.annotation.processing.RoundEnvironment;
@@ -20,8 +28,9 @@ import javax.lang.model.util.Types;
 import javax.tools.FileObject;
 import javax.tools.JavaFileManager;
 import javax.tools.StandardLocation;
-import java.io.*;
-import java.util.*;
+
+import dagger.Module;
+import dagger.Provides;
 
 @SupportedAnnotationTypes("dagger.Module")
 @SupportedSourceVersion(SourceVersion.RELEASE_6)
@@ -121,8 +130,9 @@ public class DaggerModulesProcessor extends AbstractProcessor {
         FileObject resource = processingEnv.getFiler().createResource(location, "", relativeName);
 
         final String name = resource.getName();
-        final int targetIndexOf = name.indexOf("target");
-        final int buildIndexOf = name.indexOf("build");
+
+        final int targetIndexOf = name.lastIndexOf("target");
+        final int buildIndexOf = name.lastIndexOf("build");
         final String basePath;
         if (targetIndexOf > 0) {
             basePath = name.substring(0, targetIndexOf);
