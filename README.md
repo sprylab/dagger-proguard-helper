@@ -12,7 +12,7 @@ You should add to your pom.xml:
         <dependency>
             <groupId>com.sprylab.dagger</groupId>
             <artifactId>dagger-proguard-helper-processor</artifactId>
-            <version>1.0.1-sprylab1</version>
+            <version>1.0.1-sprylab2</version>
             <scope>provided</scope>
         </dependency>
 

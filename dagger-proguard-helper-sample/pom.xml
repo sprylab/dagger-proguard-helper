@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.sprylab.dagger</groupId>
         <artifactId>dagger-proguard-helper</artifactId>
-        <version>1.0.1-sprylab1</version>
+        <version>1.0.1-sprylab2</version>
     </parent>
 
     <name>Dagger Proguard Helper Sample</name>
